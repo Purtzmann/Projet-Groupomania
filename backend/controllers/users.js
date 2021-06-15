@@ -113,7 +113,6 @@ exports.signin = (req, res) => {
 
 exports.updateUser = async (req, res) => {
 
-      // Getting auth header
       let headerAuth  = req.headers['authorization']; // permet de vérifier le token !
       let userId      = jwtUtils.getUserId(headerAuth); // récupérer id
 
@@ -130,7 +129,6 @@ exports.updateUser = async (req, res) => {
 
       if(req.file && userToFind.picture !== null){
          const filename = userToFind.picture.split("/imagesProfil")[1];
-         console.log('toto')
          console.log(filename)
 			fs.unlink(`imagesProfil/${filename}`, error => {
 				error ? console.log(error) : console.log("file has been deleted");
@@ -139,9 +137,7 @@ exports.updateUser = async (req, res) => {
          
       } else if(req.file && userToFind.picture === null){
          picture = `${req.protocol}://${req.get('host')}/imagesProfil/${req.file.filename}`
-         console.log('tata')
       } else { picture = null
-         console.log('titi')
       }
 
 		const userToUpdate = await models.User.update(
@@ -175,7 +171,6 @@ exports.updateUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
    
 	try {
-      
 		const user = await models.User.findOne({
 			where: { id: req.params.id }
 		});
@@ -198,9 +193,6 @@ exports.deleteUser = async (req, res) => {
 		res.status(404).json({ error: error.user });
 	}
 };
-
-
-
 
  
 exports.displayAll = (req, res) =>{

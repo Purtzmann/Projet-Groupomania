@@ -10,7 +10,6 @@ exports.create = (req, res) => {
    let userId      = jwtUtils.getUserId(headerAuth); // récupérer id
 
    //params
-
    let content = req.body.content;
    let attachment = ( req.file ? `${req.protocol}://${req.get('host')}/images/${req.file.filename}` : null );
 
@@ -44,7 +43,6 @@ exports.create = (req, res) => {
 
 
 exports.deletePost = async (req, res) => {
-   
 	try {
 		const message = await models.Message.findOne({
 			where: { id: req.params.id }
@@ -53,12 +51,12 @@ exports.deletePost = async (req, res) => {
 		if (message.attachment !== null) {
 			const filename = message.attachment.split("/images")[1];
 			fs.unlink(`images/${filename}`, error => {
-				error ? console.log(error) : console.log("file has been deleted");
+				error ? console.log(error) : console.log("fichier supprimé");
 			});
 		}
 
 		if (!message) {
-			throw new Error("Sorry,your post doesn't exist ");
+			throw new Error("Aucun post existant");
 		}
 
 		// post
@@ -67,9 +65,9 @@ exports.deletePost = async (req, res) => {
 		});
 
 		if (!destroyedMessage) {
-			throw new Error("Sorry,something gone wrong,please try again later");
+			throw new Error("Une erreur est survenue");
 		} else {
-			res.status(200).json({ message: "Post has been deleted " });
+			res.status(200).json({ message: "Le post a été supprimé " });
 		}
 
 	} catch (error) {
