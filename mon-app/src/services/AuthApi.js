@@ -37,7 +37,7 @@ export function signup(credentials){
 
 export function logout(){
    removeItem('Token')
-   //removeItem('id')
+   removeItem('id')
 }
 
 export function tokenIsValid(token){
