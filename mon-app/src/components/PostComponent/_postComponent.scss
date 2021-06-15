@@ -1,0 +1,53 @@
+.post{
+   background: #FFFFFF;
+   border: 1px solid #C4C4C4;
+   box-sizing: border-box;
+   border-radius: 5px 5px 0 0;
+   margin: 0.6rem;
+   display: flex;
+   padding: 0.2rem;
+   flex-direction: column;
+   word-wrap: break-word;
+}
+
+.post__InfoUser{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.post__Photo{
+   border:2px solid #c4c4c4;
+   height: 60px;
+   width: 60px;
+   border-radius: 5px 5px 5px 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   img{
+      overflow: hidden;
+   }
+}
+
+.post__Description{
+   padding: 0.2rem;
+   margin-left: 0.4rem;
+}
+
+.post__Text{
+   padding: 0.4rem;
+   margin-left: 1.9rem;
+   margin-top: 0.4rem;
+   margin-bottom: 0.4rem;
+}
+
+.post__Image{
+   display: flex;
+   justify-content: center;
+
+   margin-bottom: 1rem;
+   img{
+      max-width: 400px;
+      max-height: 400px;
+   }
+}

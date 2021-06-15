@@ -1,0 +1,27 @@
+.logout__text{
+   color: white;
+   font-weight: bold;
+   font-size: 25px;
+   text-decoration: none;
+   cursor: pointer;
+   &:hover{
+     color: #FD4119;
+   }
+}
+
+@media screen and (max-width: 767px) {
+  .logout{
+    display: flex;
+    justify-content: center;
+    .logout__text{
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 15px;
+      &:hover{
+        color: #FD4119;
+      }
+   }
+  }
+}
