@@ -86,14 +86,7 @@ const Login = ({history}) =>{
                               />
                               <div className="error">Erreur mail ou password</div>
                            </div>
-                           <div className="mb-3 form-check">
-                              <input 
-                                 type="checkbox" 
-                                 className="form-check-input" 
-                                 id="exampleCheck1"
-                              />
-                              <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                           </div>
+                           
                            <div className="form-group">
                            <Bouton>CONNEXION</Bouton>
                            <a onClick={handleRegister} href="/register">Creation d'un compte</a>
