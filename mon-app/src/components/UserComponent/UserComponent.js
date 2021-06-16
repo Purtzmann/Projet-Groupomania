@@ -6,7 +6,7 @@ const UserComponent = (props) => {
    const handleImage = () =>{
       if(props.picture === null){
          return(
-            <img src="./images/pictureCreation.png" alt="img-log" />
+            <img src="./images/pictureCreation.png" alt="image de profil de l'utilisateur" />
          )
       }else{
          return(<img src={props.picture} alt="img-log" />)

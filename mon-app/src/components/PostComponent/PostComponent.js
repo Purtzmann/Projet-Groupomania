@@ -7,7 +7,7 @@ const PostComponent = (props) => {
       if(props.attachment != null){
          return(
             <div className="post__Image">
-               <img src={props.attachment} alt="images" />
+               <img src={props.attachment} alt="image en rapport avec le texte" />
             </div>
          )
       }
@@ -16,10 +16,10 @@ const PostComponent = (props) => {
    const handleImageProfil = () =>{
       if(props.User.picture === null){
          return(
-            <img src="./images/pictureCreation.png" alt="image_de_profil" />
+            <img src="./images/pictureCreation.png" alt="image de profil de l'utilisateur" />
          )
       }else{
-         return(<img src={props.User.picture} alt="image_de_profil" />)
+         return(<img src={props.User.picture} alt="image de profil de l'utilisateur" />)
       }
    }
 
