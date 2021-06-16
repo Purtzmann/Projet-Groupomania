@@ -1,7 +1,6 @@
 import React, {  useState } from "react";
 import { Route, Switch, BrowserRouter} from 'react-router-dom'
 import Posts from './pages/articles/Posts'
-import Account from './pages/users/account/Account'
 import Register from './pages/users/register/Register'
 import Login from './pages/users/login/Login'
 import {hasAuthenticated} from './services/AuthApi'
