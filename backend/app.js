@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const xss = require('xss-clean')
-const rateLimit = require("express-rate-limit");
 
 const app = express();
 
@@ -17,11 +16,6 @@ const messagesRoutes = require("./routes/messages");
 
 const path = require("path");
 
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, // 15 minutes
-//   max: 100 // limit each IP to 100 requests per windowMs
-// });
-//app.use(limiter);
 
 app.use(cors());
 
